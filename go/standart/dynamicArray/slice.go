@@ -125,12 +125,15 @@ func (d *DynamicArray) RemoveByIndex(index int) error {
 	if d.GetSize() == 0 {
 		return errors.New("array is empty")
 	}
+
 	if index < 0 || index >= d.GetSize() {
 		return errors.New("index out of range")
 	}
+
 	for i := index; i < d.GetSize(); i++ {
 		d.items[i-1] = d.items[i]
 	}
+
 	d.size--
 	return nil
 }

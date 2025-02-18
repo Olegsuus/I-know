@@ -51,6 +51,14 @@ func (n *Node) Search(val int) bool {
 	return n.Right.Search(val)
 }
 
+func (n *Node) FindMin() int {
+	if n.Left == nil {
+		return n.Value
+	}
+
+	return n.Left.FindMin()
+}
+
 func main() {
 	n := &Node{Value: 10}
 
